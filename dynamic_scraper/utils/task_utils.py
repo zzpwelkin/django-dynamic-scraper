@@ -25,6 +25,8 @@ class TaskUtils():
         conn.request("POST", "/schedule.json", params, headers)
         conn.getresponse()
     
+        # add priority of scrapy jobs
+        param_dict['priority'] = kwargs.get('priority', 0.0
     
     def _pending_jobs(self, spider):
         # Ommit scheduling new jobs if there are still pending jobs for same spider
